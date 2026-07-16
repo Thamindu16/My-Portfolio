@@ -34,12 +34,25 @@
                 <h1 class="fade-in">THAMINDU KAVINDA</h1>
                 <p class="fade-in">A Data Science Undergraduate passionate about uncovering insights from complex data,
                     building predictive models, and engineering intelligent solutions.</p>
-                <a href="#projects" class="cta-btn fade-in">View My Work</a>
+                <div class="hero-btns fade-in">
+                    <a href="#projects" class="cta-btn">View My Work</a>
+                    <!-- CV Download Button - Updated to match View My Work style -->
+                    <a href="My CV.pdf" download class="cta-btn cv-btn-style">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right: 8px; vertical-align: middle;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>Download CV
+                    </a>
+                </div>
             </div>
-            <!-- Main Hero Profile Photo - Circular Frame with Glow -->
+            <!-- Main Hero Profile Photo - Bigger & Crystal Clear Premium Frame -->
             <div class="hero-img-container fade-in">
-                <div class="circular-glow-wrapper">
-                    <img src="profile1.png" alt="Thamindu Kavinda Profile" class="hero-profile-img">
+                <div class="premium-glow-wrapper">
+                    <div class="rotating-border-light"></div>
+                    <img src="profile.png" alt="Thamindu Kavinda Profile" class="hero-profile-img">
                 </div>
             </div>
         </div>
@@ -49,58 +62,104 @@
     <section id="about" class="reveal">
         <h2 class="section-title">About Me</h2>
         <div class="about-container-layout">
-            <div class="about-flex-wrapper">
-                <div class="about-main-text">
+            <!-- Premium Glass Card with Short & Clear Professional Copy -->
+            <div class="about-card-premium">
+                <div class="card-border-gradient"></div>
+                <div class="about-main-text-premium">
                     <p>I am a 4th-year <span class="highlight-blue">B.Sc. (Hons) in Data Science</span> undergraduate at
-                        the <span class="highlight-blue">Sri Lanka Technological Campus (SLTC)</span>. My academic
-                        journey has provided me with a strong foundation in statistical analysis, machine learning
-                        algorithms, and data modeling.</p>
-                    <p>I thrive on translating messy, real-world data into actionable strategies and robust systems,
-                        aiming to build a meaningful career as a <span class="highlight-blue">Data Scientist</span> and
-                        <span class="highlight-blue">Data Analyst</span>.
+                        <span class="highlight-blue">SLTC</span>. I specialize in transforming fragmented datasets into
+                        structured intelligence through statistical modeling, analytical machine learning architectures,
+                        and modern visualization techniques.
                     </p>
-                </div>
-                <!-- Secondary Profile Photo - Circular Frame -->
-                <div class="about-img-container">
-                    <div class="about-image-wrapper">
-                        <img src="profile2.jpg" alt="Thamindu Workspace" class="about-profile-img">
-                    </div>
+                    <p>My core engine runs on <span class="highlight-blue">Python, SQL, and Java</span>, alongside
+                        cross-platform application design using <span class="highlight-blue">Flutter</span>. I bridge
+                        theoretical complexity with practical, production-ready solutions to build a career as a
+                        professional Data Scientist.</p>
                 </div>
             </div>
-
-            <!-- Highlights Row below About Text -->
-            <div class="about-highlights">
-                <div class="highlight-item">
-                    <h4>Data Analytics</h4>
-                    <p>Extracting patterns and delivering data-driven stories to guide strategic decisions.</p>
-                </div>
-                <div class="highlight-item">
-                    <h4>Machine Learning</h4>
-                    <p>Designing predictive structures and engineering predictive models from raw data.</p>
-                </div>
-                <div class="highlight-item">
-                    <h4>Future Focus</h4>
-                    <p>Researching autonomous workflows and intelligent generative AI architectures.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with Icons -->
     <section id="skills" class="reveal">
         <h2 class="section-title">Core Skills</h2>
         <div class="skills-grid">
-            <div class="skill-badge">Python</div>
-            <div class="skill-badge">Data Analysis & Visualization</div>
-            <div class="skill-badge">Machine Learning</div>
-            <div class="skill-badge">SQL</div>
-            <div class="skill-badge">Java</div>
-            <div class="skill-badge">C++</div>
-            <div class="skill-badge">HTML / CSS / JavaScript</div>
-            <div class="skill-badge">Flutter (Mobile UI)</div>
-            <div class="skill-badge">Git & GitHub</div>
-            <div class="skill-badge">Power BI</div>
-            <div class="skill-badge">Docker</div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm1.8 5.4v2.8h2.8v1.8h-2.8v2.8h-1.8v-2.8H9.2V10h2.8V7.4h1.8z" />
+                </svg>
+                Python
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3v18h18" />
+                    <path d="m18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                </svg>
+                Data Analysis & Visualization
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                Machine Learning
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                    <path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6" />
+                </svg>
+                SQL
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+                Java
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                </svg>
+                C++
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M16.5 9.4 7.55 4.24a1.79 1.79 0 0 0-2.5 1.55v12.42a1.79 1.79 0 0 0 2.5 1.55l8.96-5.17a1.79 1.79 0 0 0 0-3.1Blobz" />
+                </svg>
+                HTML / CSS / JavaScript
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                </svg>
+                Flutter (Mobile UI)
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                Git & GitHub
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20v-6M6 20V10M18 20V4" />
+                </svg>
+                Power BI
+            </div>
+            <div class="skill-badge">
+                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+                Docker
+            </div>
         </div>
     </section>
 
@@ -154,7 +213,6 @@
     <!-- Contact Section -->
     <section id="contact" class="reveal">
         <h2 class="section-title">Connect With Me</h2>
-        <!-- Contact card container with rotating gradient border -->
         <div class="contact-card">
             <div class="card-border-gradient"></div>
             <div class="contact-card-content">
@@ -163,7 +221,7 @@
 
                 <!-- Social Icons Centered -->
                 <div class="social-icon-grid">
-                    <a href="mailto:thaminduofficial5@gmail.com" class="icon-link" title="Email Me">
+                    <a href="thaminduofficial5@gmail.com" class="icon-link" title="Email Me">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
