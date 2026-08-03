@@ -25,6 +25,10 @@ body {
     line-height: 1.6;
 }
 
+p {
+    text-align: justify;
+}
+
 /* Canvas Background styling */
 #particleCanvas {
     position: fixed;
@@ -63,8 +67,8 @@ nav {
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    margin-left: 30px;
-    font-size: 0.9rem;
+    margin-left: 25px;
+    font-size: 0.88rem;
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -119,12 +123,15 @@ nav {
 .cta-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: 14px 30px;
     background: var(--primary-blue);
     color: white;
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
+    border: none;
+    cursor: pointer;
     box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
     transition: all 0.3s ease;
 }
@@ -134,7 +141,6 @@ nav {
     box-shadow: 0 6px 30px rgba(0, 122, 255, 0.6);
 }
 
-/* Updated CV Button Style to match CTA Button */
 .cv-btn-style {
     background: var(--primary-blue);
     border: none;
@@ -146,7 +152,7 @@ nav {
     background: #006ee6;
 }
 
-/* --- Bigger & Crystal Clear Premium Profile Photo Layout --- */
+/* Hero Profile Frame */
 .hero-img-container {
     flex: 0.9;
     display: flex;
@@ -194,7 +200,7 @@ nav {
     transform: scale(1.03);
 }
 
-/* --- About Section (Premium Glass Card Layout) --- */
+/* --- Sections Common --- */
 section {
     padding: 100px 8%;
     max-width: 1200px;
@@ -220,13 +226,20 @@ section {
     border-radius: 2px;
 }
 
+/* Keyframes Spin */
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- About Section --- */
 .about-container-layout {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* Dynamic Glass Card for About Text */
 .about-card-premium {
     position: relative;
     border-radius: 24px;
@@ -276,55 +289,47 @@ section {
     text-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
 }
 
-/* Highlights cards below about description */
-.about-highlights {
+/* --- Core Skills Section (Side-by-Side 2-Column Grid Layout) --- */
+.skills-category-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 30px;
 }
 
-.highlight-item {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 16px;
+.skill-group {
+    background: rgba(13, 20, 35, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.3s ease;
 }
 
-.highlight-item:hover {
-    transform: translateY(-5px);
+.skill-group:hover {
+    transform: translateY(-4px);
     border-color: rgba(0, 122, 255, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.1);
 }
 
-.highlight-item h4 {
-    font-size: 1.25rem;
+.skill-category-title {
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--text-main);
+    color: var(--cyan-glow);
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
 }
 
-.highlight-item p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-/* --- Skills Section (With Rotating Gradient Border Badges) --- */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
 }
 
 .skill-badge {
     position: relative;
     background: #0d1423;
-    padding: 14px 28px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     display: inline-flex;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -333,15 +338,14 @@ section {
     transition: all 0.3s ease;
 }
 
-.skill-icon {
+.skill-svg-icon {
     width: 18px;
     height: 18px;
-    margin-right: 10px;
     color: var(--cyan-glow);
+    margin-right: 10px;
     flex-shrink: 0;
 }
 
-/* Moving gradient border light effect on hover for skill tab */
 .skill-badge::before {
     content: '';
     position: absolute;
@@ -390,7 +394,9 @@ section {
     gap: 30px;
 }
 
-.project-card {
+.project-card,
+.credential-card,
+.activity-card {
     position: relative;
     border-radius: 20px;
     background: var(--bg-dark);
@@ -410,13 +416,8 @@ section {
     transition: opacity 0.4s ease;
 }
 
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.project-card-content {
+.project-card-content,
+.credential-card-content {
     position: relative;
     background: #0d1423;
     border-radius: 18px;
@@ -428,12 +429,16 @@ section {
     z-index: 2;
 }
 
-.project-card:hover {
+.project-card:hover,
+.credential-card:hover,
+.activity-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 122, 255, 0.2);
 }
 
-.project-card:hover .card-border-gradient {
+.project-card:hover .card-border-gradient,
+.credential-card:hover .card-border-gradient,
+.activity-card:hover .card-border-gradient {
     opacity: 1;
     animation: spin 3s linear infinite;
 }
@@ -447,13 +452,17 @@ section {
     margin-bottom: 15px;
 }
 
-.project-card h3 {
+.project-card h3,
+.credential-card h3,
+.activity-card h3 {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 15px;
 }
 
-.project-card p {
+.project-card p,
+.credential-card p,
+.activity-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 25px;
@@ -474,7 +483,59 @@ section {
     transform: translateX(5px);
 }
 
-/* --- Contact Section --- */
+/* --- Credentials Section --- */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.credential-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: var(--cyan-glow);
+}
+
+/* --- Extra Activities Section (2x2 Landscape) --- */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.activity-card-content {
+    position: relative;
+    background: #0d1423;
+    border-radius: 18px;
+    padding: 25px;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-img-box {
+    width: 100%;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: var(--bg-dark);
+}
+
+.activity-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.activity-card:hover .activity-img {
+    transform: scale(1.05);
+}
+
+/* --- Contact Section & Dynamic Form Layout --- */
 .contact-card {
     position: relative;
     border-radius: 24px;
@@ -509,11 +570,62 @@ section {
 }
 
 .contact-card-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     max-width: 600px;
     line-height: 1.7;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 650px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(10, 14, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
+}
+
+.form-disclaimer {
+    font-size: 0.85rem !important;
+    color: var(--text-muted);
+    margin-bottom: 25px !important;
+    text-align: left;
+}
+
+.form-submit-btn {
+    width: auto;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .social-icon-grid {
@@ -564,5 +676,13 @@ footer {
     .premium-glow-wrapper {
         width: 300px;
         height: 300px;
+    }
+
+    .skills-category-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
     }
 }
