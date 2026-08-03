@@ -81,7 +81,6 @@ function animateParticles() {
             const dy = particlesArray[i].y - particlesArray[j].y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            // Connect nearby nodes with a fine vector line
             if (distance < 120) {
                 ctx.beginPath();
                 ctx.strokeStyle = `rgba(0, 229, 255, ${0.12 - (distance / 120) * 0.12})`;
@@ -101,7 +100,6 @@ function animateParticles() {
 
             if (mDistance < mouse.radius) {
                 ctx.beginPath();
-                // Line gets brighter as it gets closer to the cursor
                 ctx.strokeStyle = `rgba(0, 229, 255, ${0.25 - (mDistance / mouse.radius) * 0.25})`;
                 ctx.lineWidth = 1;
                 ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
@@ -132,12 +130,26 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Trigger only once
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Attach observer hooks to targeted structures
 document.querySelectorAll('.reveal').forEach(section => {
     sectionObserver.observe(section);
 });
+
+// --- Contact Form Submission Handler (Triggers Mailto Client) ---
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const message = document.getElementById('userMessage').value;
+
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+    // Opens default mail application with pre-filled content
+    window.location.href = `mailto:thaminduofficial5@gmail.com?subject=${subject}&body=${body}`;
+}
